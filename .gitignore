@@ -8,5 +8,8 @@ desktop.ini
 # Vercel
 .vercel/
 
+# Local verification artifacts
+.verify/
+
 # Logs
 *.log
