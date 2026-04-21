@@ -120,14 +120,14 @@
       return a;
     }
 
-    bar.appendChild(makeLink("\u2190 Previous Lesson", prev));
+    bar.appendChild(makeLink("\u2190 上一章", prev));
 
     var counter = document.createElement("span");
     counter.className = "count";
-    counter.textContent = (idx + 1) + " / " + LESSONS.length;
+    counter.textContent = "第 " + (idx + 1) + " / " + LESSONS.length + " 章";
     bar.appendChild(counter);
 
-    bar.appendChild(makeLink("Next Lesson \u2192", next));
+    bar.appendChild(makeLink("下一章 \u2192", next));
 
     root.appendChild(bar);
 
