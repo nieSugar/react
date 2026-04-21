@@ -2,6 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/001%20-%20Getting%20Started%20-%20ui.dev.html",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)\\.html",
@@ -13,7 +20,8 @@
     {
       "source": "/nav.js",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" }
       ]
     }
   ]
