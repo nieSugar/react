@@ -1,0 +1,4 @@
+{
+  "The primary reason for the confusion is because there's an important but subtle step between when React evaluates your code, and the browser sees it. This makes sense. The browser can only understand JavaScript – and though JSX is a syntax <em metastring=\"\">extension</em> to JavaScript, it's still not browser compatible JavaScript.": "",
+  "The answer lies in what React calls an <strong metastring=\"\">element</strong>.": ""
+}

@@ -1,0 +1,9 @@
+{
+  "So the question is, how in the world did React go from sentiments like this, to being universally loved and <i>mostly</i> respected?": "",
+  "jQuery revolutionized building for the web by both creating a simple <em metastring=\"\">and</em> unified abstraction over manipulating the DOM that worked in <em metastring=\"\">any</em> browser - regardless of typical browser compatibility issues.": "",
+  "What jQuery needed was something that encouraged a little more structure. Something that gave a <em metastring=\"\">backbone</em> 😎 to our applications.": "",
+  "In theory, this was nice because you didn't have to worry about doing manual DOM manipulation yourself. In practice, well, implicit state changes usually lead to code that is both hard to follow <em metastring=\"\">and</em> hard to debug. It also led to performance issues since Angular.js had to constantly scan your app looking for state changes.": "",
+  "What has changed though, is <em metastring=\"\">how</em> React is used. From about 2014 - 2020, React was used (in conjunction with React Router), to primarily create single page applications. More recently, React has taken on a different role – that of a UI primitive.": "",
+  "I know it seems strange, but \"metaframeworks\" like <a href=\"https://nextjs.dev/\" metastring=\"\">Next.js</a>, <a href=\"https://remix.dev/\" metastring=\"\">Remix</a>, and <a href=\"https://astro.build/\" metastring=\"\">Astro</a> have gained popularity by treating React as a sort of UI primitive and building on top of it with new features like server side rendering, intelligent bundling, route pre-fetching, and more.": "",
+  "But regardless of <em metastring=\"\">how</em> you use React, this course was designed to teach you React from first principles, so you'll be able to use it in any context.": ""
+}

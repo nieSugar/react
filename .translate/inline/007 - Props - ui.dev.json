@@ -1,0 +1,4 @@
+{
+  "Without the ability to pass data, in this case <span class=\"highlight-trigger font-medium underline decoration-brand-blue !cursor-help\" style=\"display:inline-block;white-space:nowrap\"><code>username</code></span>, to each of our of functions, our composition would break down.": "",
+  "Similarly, because React relies heavily on composition, there needs to exist a way to pass data <strong metastring=\"\">into</strong> components. This brings us to our next important React concept, <code>props</code>.": ""
+}

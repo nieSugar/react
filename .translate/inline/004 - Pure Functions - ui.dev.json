@@ -1,0 +1,4 @@
+{
+  "Any time a function does <strong metastring=\"\">anything</strong> other than this, whether through relying on state other than the input value it receives or creating an observable change to the program itself, it's said to have a side effect.": "",
+  "So why are side effects bad? Well, they're not <em metastring=\"\">bad</em> – they're just unpredictable.": ""
+}

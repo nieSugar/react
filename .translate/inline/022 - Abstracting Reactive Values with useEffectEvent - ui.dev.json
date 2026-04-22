@@ -1,0 +1,6 @@
+{
+  "Because \"Don't Repeat Yourself\" (DRY) is a principle of software development and <strong metastring=\"\">not</strong> one of education, let's recap everything we know about React's <code>useEffect</code> hook one last time.": "",
+  "The whole purpose of <code>useEffect</code> is to encapsulate a side effect that synchronizes your component with some outside system. It works by removing the side effect from React's rendering flow and delaying its execution until it's safe to do so, <strong metastring=\"\">after</strong> the component has rendered.": "",
+  "What we really need in this moment is a way to tell React that we want to use a reactive value inside of <code>useEffect</code>, but that reactive value has <em metastring=\"\">nothing</em> to do with synchronizing the component, and therefore, shouldn't need to be included in the dependency array.": "",
+  "The biggest thing to notice is that <code>url</code> is still included in the dependency array <strong metastring=\"\">and</strong> we're passing it as an argument to <code>onPageView</code>. This is good practice as it makes it explicit which values are synchronizing (<code>url</code>) and which aren't (<code>state</code>).": ""
+}

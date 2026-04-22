@@ -1,0 +1,7 @@
+{
+  "React, of course, is a lovechild of the two – giving you the declarative-ness of HTML with the feature set of JavaScript. But, what does that <em metastring=\"\">actually</em> look like.": "",
+  "The <em metastring=\"\">only</em> change we need to make it a true React component is to capitalize the first letter of our function.": "",
+  "The reason you need to capitalize the first letter of your component is so React knows it's a React component and not a normal DOM <code>element</code> – i.e. <span class=\"font-mono tracking-tight px-1 py-0.5 font-semibold text-[16px] bg-gray-75 dark:bg-brand-charcoal rounded text-brand-blue\">Footer</span> vs <span class=\"font-mono tracking-tight px-1 py-0.5 font-semibold text-[16px] bg-gray-75 dark:bg-brand-charcoal rounded text-brand-green\">footer</span>.": "",
+  "Notice that we don't invoke <code>Authors</code> as if it's a normal function – i.e. <code>Authors()</code>. Instead, we treat it as if it were an HTML element, wrapping it in angle brackets – i.e. <code>&lt;Authors /&gt;</code>.": "",
+  "For example, we can refactor the code above like so – assuming <code>Timeline</code>, <code>Trending</code>, and <code>Follow</code> are only used inside of this <code>Home</code> component.": ""
+}

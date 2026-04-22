@@ -1,0 +1,9 @@
+{
+  "So what does adding state to a component look like? Let's say we were building a simple <strong metastring=\"\">counter</strong> app that keeps track of how many times a user has clicked a button.": "",
+  "Ironically, it won't work for the same reason, because React <em metastring=\"\">is</em> just JavaScript – and that's not how JavaScript works.": "",
+  "Well, we need some help from React. Specifically, we need a way to tell React to preserve the value of <code>count</code> between different invocations of our <code>Counter</code> function (React refers to these function component invocations as <em metastring=\"\">renders</em>).": "",
+  "Lucky for us, React comes with a <span class=\"font-black tracking-wider\" style=\"color:var(--brand-orange)\">hook</span> that does exactly this called <code>useState</code>.": "",
+  "\"Hooks are functions, but it’s helpful to think of them as unconditional declarations about your component’s needs. You <em metastring=\"\">use</em> React features at the top of your component similar to how you <em metastring=\"\">import</em> modules at the top of your file.\" - React docs": "",
+  "Now that we know the purpose of <code>useState</code> as well as how it works, let's update our <code>Counter</code> example from earlier to <em metastring=\"\">use</em> it.": "",
+  "Now, regardless of how many times React renders our <code>Counter</code> component, the value of <code>count</code> will persist across all of those renders. But this brings up an interesting question, when <em metastring=\"\">does</em> React render our components exactly?": ""
+}
