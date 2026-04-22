@@ -1,19 +1,11 @@
 {
-  "Reality Check - ui.dev": "",
-  "Next Lesson": "",
-  "Reality Check": "",
-  "media loading": "",
-  "Up until this point, we've seen how beautifully simple React is in its purest form. You encapsulate UI, state, and event handlers into components, compose those components together, passing data down the component tree as needed via props.": "",
-  "The problem, of course, is nothing muddies the simplicity of a mental model quite like the complexities of reality.": "",
-  "outside world": "",
-  "That's what this section is dedicated to, specifically learning how get React to play nicely with the outside world.": "",
-  "Let's dive in.": "",
-  "Carlos Rangel": "",
-  "4 months ago": "",
-  "Matthew S.": "",
-  "28 days ago": "",
-  "You've made it this far. Take a rest before continuing.": "",
-  "Name (required to comment)": "",
-  "Markdown is supported": "",
-  "Start Thread": ""
+  "Reality Check - ui.dev": "现实检验 - ui.dev",
+  "Next Lesson": "下一章",
+  "Reality Check": "现实检验",
+  "media loading": "媒体加载中",
+  "Up until this point, we've seen how beautifully simple React is in its purest form. You encapsulate UI, state, and event handlers into components, compose those components together, passing data down the component tree as needed via props.": "到目前为止，我们已经看到了 React 在最纯粹形态下的简洁之美。你将 UI、state 和事件处理函数封装进 component，再把这些 component 组合起来，并按需通过 props 将数据沿 component 树向下传递。",
+  "The problem, of course, is nothing muddies the simplicity of a mental model quite like the complexities of reality.": "但问题在于，没有什么比现实的复杂性更能搅乱一个心智模型的简洁性了。",
+  "outside world": "外部世界",
+  "That's what this section is dedicated to, specifically learning how get React to play nicely with the outside world.": "这正是本章要讲的内容——具体来说，就是学习如何让 React 与外部世界和谐相处。",
+  "Let's dive in.": "让我们开始吧。"
 }
