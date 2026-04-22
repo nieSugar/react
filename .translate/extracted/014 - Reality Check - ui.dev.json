@@ -1,0 +1,19 @@
+{
+  "Reality Check - ui.dev": "",
+  "Next Lesson": "",
+  "Reality Check": "",
+  "media loading": "",
+  "Up until this point, we've seen how beautifully simple React is in its purest form. You encapsulate UI, state, and event handlers into components, compose those components together, passing data down the component tree as needed via props.": "",
+  "The problem, of course, is nothing muddies the simplicity of a mental model quite like the complexities of reality.": "",
+  "outside world": "",
+  "That's what this section is dedicated to, specifically learning how get React to play nicely with the outside world.": "",
+  "Let's dive in.": "",
+  "Carlos Rangel": "",
+  "4 months ago": "",
+  "Matthew S.": "",
+  "28 days ago": "",
+  "You've made it this far. Take a rest before continuing.": "",
+  "Name (required to comment)": "",
+  "Markdown is supported": "",
+  "Start Thread": ""
+}

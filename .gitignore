@@ -11,5 +11,9 @@ desktop.ini
 # Local verification artifacts
 .verify/
 
+# Local tools (ad-hoc scripts)
+.tools/
+.tmp_*
+
 # Logs
 *.log
