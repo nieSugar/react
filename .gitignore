@@ -17,3 +17,8 @@ desktop.ini
 
 # Logs
 *.log
+
+# Python bytecode
+__pycache__/
+*.pyc
+.translate/_test.*
