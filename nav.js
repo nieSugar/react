@@ -52,6 +52,10 @@
     return location.origin + "/" + encodeURIComponent(lesson.file);
   }
 
+  function indexUrl() {
+    return location.origin + "/index.html";
+  }
+
   function buildStyles() {
     return (
       ":host{all:initial;}" +
@@ -73,6 +77,8 @@
       "}" +
       ".btn:hover{background:#1d4ed8;transform:translateY(-1px);}" +
       ".btn[aria-disabled='true']{background:#4b5563;opacity:.5;cursor:not-allowed;pointer-events:none;}" +
+      ".btn.home{background:#fcba28;color:#0f0d0e;}" +
+      ".btn.home:hover{background:#f59e0b;}" +
       ".count{padding:0 8px;color:#cbd5e1;font:600 12px/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.03em;}"
     );
   }
@@ -128,6 +134,19 @@
     bar.appendChild(counter);
 
     bar.appendChild(makeLink("下一章 \u2192", next));
+
+    // Home / directory button back to the navigation page.
+    var home = document.createElement("a");
+    home.className = "btn home";
+    home.textContent = "\u2630 目录";
+    home.href = indexUrl();
+    home.title = "返回课程目录";
+    home.addEventListener("click", function (ev) {
+      if (ev.defaultPrevented) {
+        location.assign(indexUrl());
+      }
+    });
+    bar.appendChild(home);
 
     root.appendChild(bar);
 

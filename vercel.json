@@ -5,7 +5,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/001%20-%20Getting%20Started%20-%20ui.dev.html",
+      "destination": "/index.html",
       "permanent": false
     }
   ],

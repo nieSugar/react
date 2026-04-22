@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>React 课程目录 - ui.dev</title>
+  <meta name="theme-color" content="#0f0d0e" />
+  <style>
+    :root {
+      --bg: #0f0d0e;
+      --bg-elevated: #1b1918;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f9f4da;
+      --text-dim: #b1b4b9;
+      --accent: #fcba28;
+      --accent-2: #12b5e5;
+      --purple: #7b5ea7;
+      --green: #0ba95b;
+      --pink: #f38ba3;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Helvetica, Arial,
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(123, 94, 167, 0.25), transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, rgba(18, 181, 229, 0.18), transparent 60%),
+        radial-gradient(800px 400px at 50% 120%, rgba(252, 186, 40, 0.15), transparent 60%),
+        var(--bg);
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    header.hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .kicker {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(252, 186, 40, 0.12);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .sub {
+      margin: 0 auto;
+      max-width: 640px;
+      color: var(--text-dim);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .stat b {
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .search input::placeholder { color: var(--text-dim); }
+
+    .search input:focus {
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .search svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: var(--text-dim);
+    }
+
+    .jumpto {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    .jumpto a {
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .jumpto a:hover { text-decoration: underline; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+      transition: transform 0.15s ease, border-color 0.15s ease,
+        background 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(252, 186, 40, 0.4);
+      background: #221f1d;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card .num {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: var(--accent);
+      background: rgba(252, 186, 40, 0.1);
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+      line-height: 1.35;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .card .en {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .card .arrow {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      color: var(--text-dim);
+      transition: transform 0.15s ease, color 0.15s ease;
+    }
+
+    .card:hover .arrow {
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+
+    .empty {
+      text-align: center;
+      color: var(--text-dim);
+      padding: 48px 16px;
+      font-size: 15px;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 13px;
+      margin-top: 64px;
+      line-height: 1.6;
+    }
+
+    /* Color-cycle the left accent bar for visual variety */
+    .card:nth-child(6n+1)::before { background: var(--accent); }
+    .card:nth-child(6n+2)::before { background: var(--accent-2); }
+    .card:nth-child(6n+3)::before { background: var(--green); }
+    .card:nth-child(6n+4)::before { background: var(--purple); }
+    .card:nth-child(6n+5)::before { background: var(--pink); }
+    .card:nth-child(6n+0)::before { background: #fc7428; }
+
+    @media (max-width: 560px) {
+      .wrap { padding: 40px 16px 72px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="kicker">React 学习目录</span>
+      <h1>React 课程 <span class="accent">导航</span></h1>
+      <p class="sub">
+        共 24 节课程，点击任意卡片即可开始阅读。支持键盘左右方向键在课程间切换，课程页底部悬浮有上一章 / 下一章快捷入口。
+      </p>
+      <div class="stats">
+        <span class="stat"><b id="totalCount">24</b> 节课程</span>
+        <span class="stat"><b>中文</b> 翻译</span>
+        <span class="stat"><b>离线</b> 阅读</span>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input id="q" type="search" placeholder="搜索课程标题（中/英文均可）..." autocomplete="off" />
+      </div>
+      <div class="jumpto">
+        快速跳转：
+        <a href="#" data-jump="first">第一章</a>
+        <span>·</span>
+        <a href="#" data-jump="last">最后一章</a>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">没有找到匹配的课程</div>
+
+    <footer>
+      基于 ui.dev 课程内容整理 · 本页为本地离线导航目录
+    </footer>
+  </div>
+
+  <script>
+    // Source of truth for lessons. Keep in sync with nav.js.
+    const LESSONS = [
+      { n: "001", zh: "开始学习", en: "Getting Started", file: "001 - Getting Started - ui.dev.html" },
+      { n: "002", zh: "为什么用 React？", en: "Why React?", file: "002 - Why React_ - ui.dev.html" },
+      { n: "003", zh: "命令式与声明式编程", en: "Imperative vs Declarative Programming", file: "003 - Imperative vs Declarative Programming - ui.dev.html" },
+      { n: "004", zh: "纯函数", en: "Pure Functions", file: "004 - Pure Functions - ui.dev.html" },
+      { n: "005", zh: "组件（Components）", en: "Components", file: "005 - Components - ui.dev.html" },
+      { n: "006", zh: "JSX", en: "JSX", file: "006 - JSX - ui.dev.html" },
+      { n: "007", zh: "Props", en: "Props", file: "007 - Props - ui.dev.html" },
+      { n: "008", zh: "Elements 与 Components", en: "Elements vs Components", file: "008 - Elements vs Components - ui.dev.html" },
+      { n: "009", zh: "Elements 与 Components（含样式）", en: "Elements vs Components (with styles.css)", file: "009 - Elements vs Components - ui.dev + styles.css.html" },
+      { n: "010", zh: "处理事件", en: "Handling Events", file: "010 - Handling Events - ui.dev.html" },
+      { n: "011", zh: "使用 useState 保存值", en: "Preserving Values with useState", file: "011 - Preserving Values with useState - ui.dev.html" },
+      { n: "012", zh: "使用 useState", en: "Using useState", file: "012 - Using useState - ui.dev.html" },
+      { n: "013", zh: "React 为什么会渲染", en: "Why React Renders", file: "013 - Why React Renders - ui.dev.html" },
+      { n: "014", zh: "现实检验", en: "Reality Check", file: "014 - Reality Check - ui.dev.html" },
+      { n: "015", zh: "管理 Effect", en: "Managing Effects", file: "015 - Managing Effects - ui.dev.html" },
+      { n: "016", zh: "管理 Effect - 第二部分", en: "Managing Effects - Part 2", file: "016 - Managing Effects - Part 2 - ui.dev.html" },
+      { n: "017", zh: "使用 useRef 保存值", en: "Preserving Values with useRef", file: "017 - Preserving Values with useRef - ui.dev.html" },
+      { n: "018", zh: "使用 Context 进行跨组件传值", en: "Teleportation with Context", file: "018 - Teleportation with Context - ui.dev.html" },
+      { n: "019", zh: "使用 useReducer 管理复杂状态", en: "Complex State with useReducer", file: "019 - Complex State with useReducer - ui.dev.html" },
+      { n: "020", zh: "引用相等及其重要性", en: "Referential Equality and Why It Matters", file: "020 - Referential Equality and Why It Matters - ui.dev.html" },
+      { n: "021", zh: "管理高级 Effect", en: "Managing Advanced Effects", file: "021 - Managing Advanced Effects - ui.dev.html" },
+      { n: "022", zh: "使用 useEffectEvent 抽象响应式值", en: "Abstracting Reactive Values with useEffectEvent", file: "022 - Abstracting Reactive Values with useEffectEvent - ui.dev.html" },
+      { n: "023", zh: "创建自定义 Hook", en: "Creating Custom Hooks", file: "023 - Creating Custom Hooks - ui.dev.html" },
+      { n: "024", zh: "重构 useHooks", en: "Rebuilding useHooks", file: "024 - Rebuilding useHooks - ui.dev.html" }
+    ];
+
+    const grid = document.getElementById("grid");
+    const empty = document.getElementById("empty");
+    const totalCount = document.getElementById("totalCount");
+    const q = document.getElementById("q");
+
+    totalCount.textContent = String(LESSONS.length);
+
+    function urlFor(lesson) {
+      return "/" + encodeURIComponent(lesson.file);
+    }
+
+    function render(list) {
+      grid.innerHTML = "";
+      if (list.length === 0) {
+        empty.style.display = "block";
+        return;
+      }
+      empty.style.display = "none";
+      const frag = document.createDocumentFragment();
+      list.forEach(function (l) {
+        const a = document.createElement("a");
+        a.className = "card";
+        a.href = urlFor(l);
+        a.innerHTML =
+          '<span class="num">第 ' + l.n + ' 章</span>' +
+          '<h3>' + escapeHtml(l.zh) + '</h3>' +
+          '<div class="en">' + escapeHtml(l.en) + '</div>' +
+          '<span class="arrow">→</span>';
+        frag.appendChild(a);
+      });
+      grid.appendChild(frag);
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function applyFilter() {
+      const kw = q.value.trim().toLowerCase();
+      if (!kw) return render(LESSONS);
+      render(
+        LESSONS.filter(function (l) {
+          return (
+            l.n.toLowerCase().indexOf(kw) !== -1 ||
+            l.zh.toLowerCase().indexOf(kw) !== -1 ||
+            l.en.toLowerCase().indexOf(kw) !== -1
+          );
+        })
+      );
+    }
+
+    q.addEventListener("input", applyFilter);
+
+    document.querySelectorAll(".jumpto a[data-jump]").forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.preventDefault();
+        const which = el.getAttribute("data-jump");
+        const target = which === "first" ? LESSONS[0] : LESSONS[LESSONS.length - 1];
+        location.assign(urlFor(target));
+      });
+    });
+
+    // Initial paint
+    render(LESSONS);
+
+    // Keyboard: "/" focuses search
+    window.addEventListener("keydown", function (e) {
+      if (e.key === "/" && document.activeElement !== q) {
+        e.preventDefault();
+        q.focus();
+      }
+    });
+  </script>
+</body>
+</html>
