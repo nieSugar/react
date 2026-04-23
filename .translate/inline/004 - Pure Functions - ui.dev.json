@@ -1,4 +1,0 @@
-{
-  "Any time a function does <strong metastring=\"\">anything</strong> other than this, whether through relying on state other than the input value it receives or creating an observable change to the program itself, it's said to have a side effect.": "只要一个函数做了<strong metastring=\"\">除此之外</strong>的任何事情 —— 不管是依赖它接收的输入值以外的状态，还是对程序本身产生了可观察的改动 —— 就可以说它有副作用。",
-  "So why are side effects bad? Well, they're not <em metastring=\"\">bad</em> – they're just unpredictable.": "那副作用为什么不好？其实它们并不<em metastring=\"\">坏</em> —— 只是不可预测而已。"
-}

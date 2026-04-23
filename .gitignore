@@ -21,4 +21,6 @@ desktop.ini
 # Python bytecode
 __pycache__/
 *.pyc
-.translate/_test.*
+
+# Local translation workspace (scripts + intermediate JSON)
+.translate/

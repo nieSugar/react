@@ -1,3 +1,0 @@
-{
-  "In the real world, it's not uncommon to need to do things <em metastring=\"\">outside</em> of React. Fetching data from a server, interacting directly with the DOM, or even using native browser APIs like <code>setTimeout</code> or <code>localStorage</code> are all examples of real world use cases that don't fit neatly into the React's model.": "在真实项目里，经常需要做一些<em metastring=\"\">React 之外</em>的事。比如从服务器获取数据、直接和 DOM 交互、甚至使用 <code>setTimeout</code> 或 <code>localStorage</code> 这类浏览器原生 API —— 这些场景都没法完全套进 React 的模型里。"
-}
